@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>نقشهٔ زندهٔ خاطرات شهر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: #faf3e8;
+    color: #2e2a26;
+    line-height: 1.8;
+  }
+  .handwritten { font-family: 'Lalezar', 'Vazirmatn', sans-serif; }
+
+  header.hero {
+    text-align: center;
+    padding: 70px 20px 50px;
+    background:
+      radial-gradient(rgba(122,46,58,0.05) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  header.hero .icon {
+    width: 84px; height: 84px; border-radius: 24px;
+    background: linear-gradient(135deg,#7a2e3a,#c9836b);
+    display:flex; align-items:center; justify-content:center;
+    margin: 0 auto 20px; font-size: 36px; color:white;
+    box-shadow: 0 10px 30px -8px rgba(122,46,58,0.4);
+  }
+  header.hero h1 { font-size: 2.4rem; color:#7a2e3a; margin-bottom: 10px; }
+  header.hero p { font-size: 1rem; color:#5c4a3f; max-width: 480px; margin: 0 auto 30px; }
+
+  .btn {
+    display: inline-flex; align-items:center; gap:8px;
+    padding: 14px 28px; border-radius: 999px; font-weight:600;
+    font-size: .95rem; text-decoration:none; cursor:pointer; border:none;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background:#7a2e3a; color:white; box-shadow:0 8px 20px -6px rgba(122,46,58,.5); }
+  .btn-outline { background:white; color:#7a2e3a; border:1.5px solid #7a2e3a22; }
+
+  .cta-row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+  section { max-width: 720px; margin: 0 auto; padding: 50px 20px; }
+  section h2 { font-size:1.5rem; color:#7a2e3a; text-align:center; margin-bottom: 30px; }
+
+  .features { display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
+  .feature-card {
+    background:white; border-radius:20px; padding:22px;
+    box-shadow: 0 4px 20px -6px rgba(122,46,58,.12);
+    text-align:center;
+  }
+  .feature-card .emoji { font-size:1.8rem; margin-bottom:10px; }
+  .feature-card h3 { font-size:.95rem; margin-bottom:6px; color:#2e2a26; }
+  .feature-card p { font-size:.8rem; color:#7a6a5f; }
+
+  .cafe-section {
+    background: white; border-radius: 28px; padding: 36px 24px;
+    box-shadow: 0 8px 30px -8px rgba(122,46,58,.15);
+    text-align:center;
+  }
+  .cafe-section .handwritten { font-size:1.8rem; color:#7a2e3a; margin-bottom:6px; }
+  .cafe-section > p.sub { color:#7a6a5f; font-size:.85rem; margin-bottom:26px; }
+
+  .tiers { display:grid; grid-template-columns: repeat(auto-fit,minmax(130px,1fr)); gap:12px; margin-bottom: 20px; }
+  .tier {
+    border: 2px solid #f0e4d8; border-radius:16px; padding:16px 10px;
+    cursor:pointer; background:#fffdf9; transition: border-color .15s, transform .15s;
+  }
+  .tier:hover { transform: translateY(-2px); }
+  .tier.selected { border-color:#7a2e3a; background:#fdf3ef; }
+  .tier .emoji { font-size:1.6rem; }
+  .tier .name { font-weight:600; font-size:.85rem; margin: 4px 0 2px; }
+  .tier .price { font-size:.75rem; color:#7a6a5f; }
+
+  .custom-amount {
+    display:flex; align-items:center; gap:8px; justify-content:center;
+    margin-bottom: 20px;
+  }
+  .custom-amount input {
+    width: 160px; padding: 10px 14px; border-radius: 12px;
+    border: 1.5px solid #f0e4d8; font-family:'Vazirmatn'; font-size:.9rem;
+    text-align:center;
+  }
+  .custom-amount span { font-size:.8rem; color:#7a6a5f; }
+
+  #donate-status { margin-top:14px; font-size:.85rem; min-height: 20px; }
+  #donate-status.error { color:#c0392b; }
+  #donate-status.success { color:#1e824c; }
+
+  footer { text-align:center; padding: 40px 20px; color:#a3968a; font-size:.8rem; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="icon">🗺️</div>
+  <h1 class="handwritten">نقشهٔ زندهٔ خاطرات شهر</h1>
+  <p>خاطرات و لحظه‌های آدم‌ها رو کشف کن، خاطرهٔ خودتو ثبت کن، یا یه فضای خصوصی دونفره با کسی که دوستش داری بساز.</p>
+  <div class="cta-row">
+    <a href="#download" class="btn btn-primary">📥 دانلود اپلیکیشن</a>
+    <a href="https://mattcodil.ir" class="btn btn-outline">🌐 استفاده تو مرورگر</a>
+  </div>
+</header>
+
+<section>
+  <h2>چیکار می‌تونی بکنی؟</h2>
+  <div class="features">
+    <div class="feature-card">
+      <div class="emoji">📍</div>
+      <h3>ثبت خاطره</h3>
+      <p>خاطرات شهرت رو روی نقشه ثبت کن، با عکس و حس و حال</p>
+    </div>
+    <div class="feature-card">
+      <div class="emoji">❤️</div>
+      <h3>فضای دونفره</h3>
+      <p>یه دفترچهٔ خاطرات خصوصی با شریک زندگیت بساز</p>
+    </div>
+    <div class="feature-card">
+      <div class="emoji">🔍</div>
+      <h3>کشف شهر</h3>
+      <p>خاطرات دیگران رو کشف کن، شهر رو از دید متفاوتی ببین</p>
+    </div>
+  </div>
+</section>
+
+<section id="download">
+  <h2>دانلود اپلیکیشن</h2>
+  <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+    <div class="feature-card" style="max-width:280px;">
+      <div class="emoji">🤖</div>
+      <h3>اندروید</h3>
+      <p style="margin-bottom:14px;">فایل نصب مستقیم (APK)، بدون نیاز به گوگل‌پلی</p>
+      <a href="/downloads/mattcodil.apk" class="btn btn-primary" style="width:100%; justify-content:center;">دانلود APK</a>
+    </div>
+    <div class="feature-card" style="max-width:280px;">
+      <div class="emoji">🍎</div>
+      <h3>آیفون (iOS)</h3>
+      <p style="margin-bottom:14px;">از مرورگر Safari وارد سایت شو و «Add to Home Screen» رو بزن</p>
+      <a href="https://mattcodil.ir" class="btn btn-outline" style="width:100%; justify-content:center;">راهنمای نصب</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="cafe-section">
+    <p class="handwritten">☕ یه قهوه به ما دعوت کن</p>
+    <p class="sub">این پروژه با عشق ساخته شده. اگه دوست داشتی، حمایتت باعث ادامه‌دار شدنشه.</p>
+
+    <div class="tiers" id="tiers">
+      <div class="tier" data-amount="200000" data-label="اسپرسو">
+        <div class="emoji">☕</div>
+        <div class="name">اسپرسو</div>
+        <div class="price">۲۰۰,۰۰۰ تومان</div>
+      </div>
+      <div class="tier" data-amount="250000" data-label="لاته">
+        <div class="emoji">🥛</div>
+        <div class="name">لاته</div>
+        <div class="price">۲۵۰,۰۰۰ تومان</div>
+      </div>
+      <div class="tier" data-amount="300000" data-label="ماکیاتو">
+        <div class="emoji">🍮</div>
+        <div class="name">ماکیاتو</div>
+        <div class="price">۳۰۰,۰۰۰ تومان</div>
+      </div>
+      <div class="tier" data-amount="350000" data-label="موکا">
+        <div class="emoji">🍫</div>
+        <div class="name">موکا</div>
+        <div class="price">۳۵۰,۰۰۰ تومان</div>
+      </div>
+    </div>
+
+    <p style="font-size:.8rem; color:#a3968a; margin-bottom:10px;">محل ما ارزون‌تر می‌ده 😉 — مبلغ دلخواهت رو وارد کن:</p>
+    <div class="custom-amount">
+      <input type="number" id="custom-amount-input" placeholder="مثلاً ۱۰۰۰۰۰" min="1000" step="1000" />
+      <span>تومان</span>
+    </div>
+
+    <button class="btn btn-primary" id="donate-btn">حمایت می‌کنم</button>
+    <p id="donate-status"></p>
+    <p style="font-size:.7rem; color:#c9836b; margin-top:14px;">⚠️ درگاه در حالت آزمایشی (Sandbox) است — پرداخت واقعی انجام نمی‌شود.</p>
+  </div>
+</section>
+
+<footer>
+  ساخته شده با ❤️ — mattcodil.ir
+</footer>
+
+<script>
+  const REQUEST_FN_URL = 'https://siyqabrfoxtxkfsizgkh.functions.supabase.co/zarinpal-request';
+  const SUPABASE_ANON_KEY = 'sb_publishable_JYzrWwvyt3Ij5WueLALT9w_D7Ficej1';
+
+  let selectedAmount = null;
+  let selectedLabel = null;
+
+  document.querySelectorAll('.tier').forEach(tier => {
+    tier.addEventListener('click', () => {
+      document.querySelectorAll('.tier').forEach(t => t.classList.remove('selected'));
+      tier.classList.add('selected');
+      selectedAmount = parseInt(tier.dataset.amount, 10);
+      selectedLabel = tier.dataset.label;
+      document.getElementById('custom-amount-input').value = '';
+    });
+  });
+
+  document.getElementById('custom-amount-input').addEventListener('input', (e) => {
+    document.querySelectorAll('.tier').forEach(t => t.classList.remove('selected'));
+    selectedAmount = parseInt(e.target.value, 10) || null;
+    selectedLabel = 'مبلغ دلخواه';
+  });
+
+  document.getElementById('donate-btn').addEventListener('click', async () => {
+    const statusEl = document.getElementById('donate-status');
+    statusEl.className = '';
+    statusEl.textContent = '';
+
+    if (!selectedAmount || selectedAmount < 1000) {
+      statusEl.className = 'error';
+      statusEl.textContent = 'لطفاً یه مبلغ انتخاب یا وارد کن';
+      return;
+    }
+
+    statusEl.textContent = 'در حال اتصال به درگاه...';
+
+    try {
+      const res = await fetch(REQUEST_FN_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+        },
+        body: JSON.stringify({ amount_toman: selectedAmount, item_label: selectedLabel }),
+      });
+      const data = await res.json();
+      if (data.redirect_url) {
+        window.location.href = data.redirect_url;
+      } else {
+        statusEl.className = 'error';
+        statusEl.textContent = data.error || 'خطایی پیش اومد';
+      }
+    } catch (err) {
+      statusEl.className = 'error';
+      statusEl.textContent = 'ارتباط با سرور برقرار نشد';
+    }
+  });
+</script>
+
+</body>
+</html>

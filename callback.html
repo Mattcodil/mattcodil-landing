@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>نتیجهٔ پرداخت</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:'Vazirmatn', sans-serif;
+    background:#faf3e8; color:#2e2a26;
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    padding:20px;
+  }
+  .card {
+    background:white; border-radius:24px; padding:40px 28px;
+    max-width:380px; text-align:center;
+    box-shadow:0 10px 34px -10px rgba(122,46,58,.25);
+  }
+  .emoji { font-size:3rem; margin-bottom:14px; }
+  h1 { font-family:'Lalezar','Vazirmatn'; font-size:1.6rem; color:#7a2e3a; margin-bottom:10px; }
+  p { color:#5c4a3f; font-size:.9rem; margin-bottom:20px; }
+  a.btn {
+    display:inline-block; background:#7a2e3a; color:white; text-decoration:none;
+    padding:12px 26px; border-radius:999px; font-weight:600; font-size:.85rem;
+  }
+  .ref { font-size:.75rem; color:#a3968a; margin-top:14px; }
+</style>
+</head>
+<body>
+  <div class="card" id="result">
+    <div class="emoji">⏳</div>
+    <h1>در حال بررسی پرداخت...</h1>
+    <p>چند لحظه صبر کن</p>
+  </div>
+
+  <script>
+    const VERIFY_FN_URL = 'https://siyqabrfoxtxkfsizgkh.functions.supabase.co/zarinpal-verify';
+    const SUPABASE_ANON_KEY = 'sb_publishable_JYzrWwvyt3Ij5WueLALT9w_D7Ficej1';
+
+    const params = new URLSearchParams(window.location.search);
+    const authority = params.get('Authority');
+    const status = params.get('Status');
+
+    async function verify() {
+      const resultEl = document.getElementById('result');
+      try {
+        const res = await fetch(VERIFY_FN_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+          },
+          body: JSON.stringify({ authority, status }),
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          resultEl.innerHTML = `
+            <div class="emoji">🎉</div>
+            <h1>ممنون از حمایتت!</h1>
+            <p>پرداخت با موفقیت انجام شد.</p>
+            <div class="ref">کد پیگیری: ${data.ref_id}</div>
+            <br/><br/>
+            <a class="btn" href="/">بازگشت به صفحه اصلی</a>
+          `;
+        } else {
+          resultEl.innerHTML = `
+            <div class="emoji">😕</div>
+            <h1>پرداخت ناموفق بود</h1>
+            <p>${data.message || 'مشکلی پیش اومد، دوباره امتحان کن.'}</p>
+            <a class="btn" href="/">بازگشت به صفحه اصلی</a>
+          `;
+        }
+      } catch (err) {
+        resultEl.innerHTML = `
+          <div class="emoji">⚠️</div>
+          <h1>خطا در ارتباط</h1>
+          <p>نتونستیم وضعیت پرداخت رو بررسی کنیم.</p>
+          <a class="btn" href="/">بازگشت به صفحه اصلی</a>
+        `;
+      }
+    }
+
+    verify();
+  </script>
+</body>
+</html>
